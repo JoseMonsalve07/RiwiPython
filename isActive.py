@@ -20,3 +20,6 @@ if password==userPass:
 while isActive:
     for i in range (0,14):
         print(i)
+        if i == 13:
+            isActive=False
+            break
