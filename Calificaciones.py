@@ -6,26 +6,30 @@
 # 5. Preguntar al usuario por un valor específico
 # 6. Contar cuántas calificaciones en la lista son mayores que este valor
 
-Grade1=int(input("Ingrese una calificación numérica de 0 a 100 "))
-while Grade1 < 0 or Grade1 > 100:
-    Grade1=int(input("Ingrese un valor válido. Solo se aceptan valores entre 0 y 100 "))
-if Grade1 >= 60:
+grade=float(input("Ingrese una calificación numérica de 0 a 100 "))
+while grade < 0 or grade > 100:
+    grade=int(input("Ingrese un valor válido. Solo se aceptan valores entre 0 y 100 "))
+if grade >= 60:
     print("Usted ha aprobado")
 else:
     print("Usted ha reprobado") 
 
-Grades=input("Ingrese sus calificaciones separadas por comas ',': ").split(",")
-FloatGrades= [float(x) for x in Grades]
-sum=0
+grades=input("Ingrese sus calificaciones separadas por comas ',': ").split(",")
+floatGrades= [float(i) for i in grades]
 
-for grade in FloatGrades:
-    sum += grade
-    avg=sum/len(FloatGrades)
+for grade in floatGrades:
+    add=sum(floatGrades)
+    avg=add/len(floatGrades)
 print(f"El promedio de las calificaciones en la lista es: {avg}")
 
-specificValue=float(input("Ingrese un valor para contar cuántas calificaciones en la lista son mayores que este valor"))
+specificValue=float(input("Ingrese un valor para contar cuántas calificaciones en la lista son mayores que este valor: "))
+for comparedGrade in floatGrades:  
+    x=0
+    while specificValue==comparedGrade:
+        x+=1
 
+print(f"aaa{x}")
 
 print(grade)
-print(FloatGrades)
-print(Grades)
+print(floatGrades)
+print(grades)
