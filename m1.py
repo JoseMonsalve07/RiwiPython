@@ -19,12 +19,13 @@ else:
 
 #Se le pregunta al usuario si desea agregar un descuento a la compra
 Q=input("Desea agregar un descuento a la compra? Responda SI o NO")
-if Q == "si":
+if Q == "si" or Q == "Si" or Q == "SI":
+#En el caso de haber un descuento en la compra, se procede a preguntarle al usuario el porcentaje de descuento deseado
     Discount= int(input("Ingrese un descuento para el total "))
-if Q == "no":
+if Q == "no" or Q == "No" or Q == "NO":
     Discount=0
 
-#En el caso de haber un descuento en la compra, se procede a preguntarle al usuario el porcentaje de descuento deseado
+#Se usa un condicional para determinar si el descuento es válido o no
 if 0 <= Discount <= 100:
     Discount=Discount 
 else:
