@@ -1,12 +1,5 @@
 # Jose Manuel Bustamante Monsalve
 
-# 1. Pedir al usuario una calificación numérica que vaya entre 0 y 100
-# 2. Determinar si el usuario aprobó o reprobó
-# 3. Pedir al usuario una lista de calificaciones del 1 al 100 separadas por comas
-# 4. Calcular y mostrar el promedio de las calificaciones en la lista
-# 5. Preguntar al usuario por un valor específico
-# 6. Contar cuántas calificaciones en la lista son mayores que este valor
- 
 # Se le pide al usuario que ingrese la nota mínima para ganar, asegurandonos de que ingrese un numero válido.
 gradeToWin=float(input("Ingrese la nota mínima para ganar (Valores entre 0 y 100): "))
 while gradeToWin < 0 or gradeToWin > 100:
@@ -36,7 +29,7 @@ if Average<gradeToWin:
         print(f"Según la nota mínima que usted ingresó para ganar ({gradeToWin}), usted ha reprobado su promedio")    
 print(f"Las calificaciones ingresadas fueron {floatGrades}. El promedio de las calificaciones en la lista es: {Average}")
 
-# Se le indica al usuario que ingrese un valor, esto para compararlo con las notas ingresadas en la lista e indicarle cuantas notas
+# Se le indica al usuario que ingrese una nota, esto para compararla con las ya ingresadas en la lista e indicarle cuantas
 # son mayores que el valor ingresado.
 specificValue=float(input("Ingrese una nota para contar cuántas en la lista son mayores que esta: "))
 gradeGreatherThanTheValue=0
@@ -45,9 +38,9 @@ while noteCounter<len(floatGrades):
     if specificValue<floatGrades[noteCounter]:
         gradeGreatherThanTheValue+=1
     noteCounter+=1 
-print(f"Total de calificaciones mayores al valor indicado: {gradeGreatherThanTheValue}")
+print(f"Total de notas mayores al valor indicado: {gradeGreatherThanTheValue}")
 
-# Se le pide al usuario que ingrese otra nota 
+# Se le pide al usuario que ingrese otra nota, esto para verificar cuántas veces se repite esta dentro de la lista e indicarle al usuario.
 specificGrade=float(input("Ingrese una nota para verificar si está en sus notas y contar cuántas veces está: "))
 repeatedGradeCounter=0
 for isTheGrade in floatGrades:
@@ -56,3 +49,7 @@ for isTheGrade in floatGrades:
     else:
         continue    
 print(f"Total de calificaciones con este mismo valor: {repeatedGradeCounter}")
+
+# BIBLIOGRAFÍA
+# https://www.freecodecamp.org/espanol/news/python-lista-append-como-agregar-elementos-a-una-lista-explicado-con-ejemplos/
+# SE USÓ PARA ENCONTRAR EL USO DEL MÉTODO: floatGrades.append(grade)
