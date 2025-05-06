@@ -1,6 +1,6 @@
-from Ejercicio5mD import addStudent, calculateAverage, results
+from utils import addStudent, calculateAverage, results
 
-#para importar desde otra carpeta
+# Para importar desde otra carpeta:
 # from "carpeta"."archivo" import "lo que se va a importar"
 
 
