@@ -1,7 +1,6 @@
 print("Bienvenido!")
 numberOfUsers=int(input("Cantidad de usuarios a ingresar: "))
 
-
 def nameAndGrades():
     name=input("Nombre del usuario: ")
     userGrades=input("Ingrese tres notas (Rango de 0 a 5), separadas por comas: ").split(",")
