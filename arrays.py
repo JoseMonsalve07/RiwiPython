@@ -31,3 +31,12 @@ for name in names:
 
 del names[1:5]
 print(names)    
+
+dicNums={
+    "uno": 1,
+    "dos": 2,
+    "tres": 3,
+    "cuatro": 4,
+    "cinco": 5,
+    "seis": 6
+}
