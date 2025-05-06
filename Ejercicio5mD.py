@@ -7,7 +7,7 @@ def addStudent():
     return name, grades
 
 def calculateAverage(grades):
-    return sum(grades)/3
+    return sum(grades)/len(grades)
 
 def results(average):
     if average>=3.0:
