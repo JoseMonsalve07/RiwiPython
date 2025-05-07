@@ -21,7 +21,7 @@ def seeInventory():
     i=0
     for product in inventory:
         i+=1
-        print(f"Producto #{i}:\n Nombre:{product["Nombre"]}\n Precio:{product["Precio"]}\n Cantidad:{product["Cantidad"]}\n")
+        print(f"Producto #{i}:\n Nombre: {product["Nombre"]}\n Precio: {product["Precio"]}\n Cantidad: {product["Cantidad"]}\n")
 
 def addProduct():
     list={}
@@ -57,8 +57,7 @@ while True:
     if option==1:
         if len(inventory)==0:
             emptyInventory()
-            toContinue()
-            continue    
+            toContinue()   
         else:
            seeInventory()
            toContinue()
