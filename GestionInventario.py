@@ -1,5 +1,7 @@
 # Jose Manuel Bustamante Monsalve
 # Actividad: Gestión de inventarios con funciones y colecciones.
+
+
 print("")
 print("--- BIENVENIDO ---")
 print("")

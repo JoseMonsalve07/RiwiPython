@@ -19,6 +19,7 @@ def emptyInventory():
 
 def seeInventory():
     i=0
+    print("Los productos en el inventario son los siguientes: \n")
     for product in inventory:
         i+=1
         print(f"Producto #{i}:\n Nombre: {product["Nombre"]}\n Precio: {product["Precio"]}\n Cantidad: {product["Cantidad"]}\n")
@@ -44,14 +45,47 @@ def toContinue():
         quit()    
 
 def consultProduct():
-    search=input("\nIngrese el nombre del producto:")
-    for product in inventory:
-        if product["Nombre"]==search:
-            print(f"\n Producto: {product["Nombre"]}\n Precio:{product["Precio"]}\n Cantidad:{product["Cantidad"]}\n")
-        if product["Nombre"]!=search:
-            print(f"\nEl producto '{search}' no está en el inventario.\n")
     if not inventory:
-            emptyInventory()
+        emptyInventory()
+    if inventory:
+        search=input("\nIngrese el nombre del producto: ")
+        for product in inventory:
+            if search!=product["Nombre"]:
+                print(f"\nEl producto '{search}' no está en el inventario.\n")
+                break
+            if product["Nombre"]==search:
+                print(f"\n Producto:{product["Nombre"]}\n Precio:{product["Precio"]}\n Cantidad:{product["Cantidad"]}\n")
+    
+def updatePrice():
+    if inventory:
+        print("\nLos productos en el invetario son los siguientes:\n")
+        seeInventory()
+        toSelectProduct=input("Ingrese un producto del inventario (escrito de igual manera a como se ve en 'Nombre'): ")
+        for product in inventory:
+            if toSelectProduct!=product["Nombre"]:
+                print(f"\nEl producto '{toSelectProduct}' no está en el inventario.\n")
+                break
+            if toSelectProduct==product["Nombre"]:
+                toUpdatePrice=float(input("Ingrese el nuevo precio del producto: "))
+                product["Precio"]=toUpdatePrice
+                print(f"El nuevo precio de {product["Nombre"]} ahora es {product["Precio"]}\n")
+    if not inventory:
+        emptyInventory()
+
+def deleteProduct():
+    if not inventory:
+        emptyInventory()
+    if inventory:
+        print("\nLos productos en el invetario son los siguientes:\n")
+        seeInventory()
+        toSelectProduct=input("Ingrese el nombre del producto que será eliminado (escrito de igual manera a como se ve en 'Nombre'): ")
+        for product in inventory:
+            if toSelectProduct!=product["Nombre"]:
+                print(f"\nEl producto '{toSelectProduct}' no está en el inventario.\n")
+                break
+            if toSelectProduct==product["Nombre"]:
+                inventory.remove(product)
+                print(f"El producto {toSelectProduct} fue eliminado del inventario.\n")
 
 while True:
     if option==1:
@@ -68,6 +102,14 @@ while True:
 
     if option==3:
         consultProduct()
+        toContinue()
+
+    if option==4:
+        updatePrice()
+        toContinue()
+    
+    if option==5:
+        deleteProduct()
         toContinue()
 
     if option==7:
