@@ -87,6 +87,14 @@ def deleteProduct():
         if toSelectProduct!=product["Nombre"]:
                 print(f"\nEl producto '{toSelectProduct}' no está en el inventario.\n")
 
+def inventoryTotalValue():
+    if not inventory:
+        emptyInventory()
+    if inventory:
+        totalValue=0
+        for product in inventory:
+            totalValue += product["Precio"] * product["Cantidad"]
+        print(f"El valor total de los productos en el inventario es de {totalValue}")    
 while True:
     if option==1:
         if len(inventory)==0:
@@ -110,6 +118,10 @@ while True:
     
     if option==5:
         deleteProduct()
+        toContinue()
+    
+    if option==6:
+        inventoryTotalValue()
         toContinue()
 
     if option==7:
